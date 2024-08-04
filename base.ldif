@@ -1,0 +1,13 @@
+dn: dc=jonatanopenconsult,dc=com
+objectClass: top
+objectClass: dcObject
+objectClass: organization
+dc: jonatanopenconsult
+o: Jonatan
+
+dn: cn=admin,dc=jonatanopenconsult,dc=com
+objectClass: simpleSecurityObject
+objectClass: organizationalRole
+cn: admin
+description: LDAP administrator
+userPassword: 852852

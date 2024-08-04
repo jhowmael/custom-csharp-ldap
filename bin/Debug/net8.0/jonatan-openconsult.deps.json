@@ -1,0 +1,83 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "jonatan-openconsult/1.0.0": {
+        "dependencies": {
+          "Novell.Directory.Ldap.NETStandard": "3.6.0",
+          "System.DirectoryServices": "8.0.0"
+        },
+        "runtime": {
+          "jonatan-openconsult.dll": {}
+        }
+      },
+      "Microsoft.Extensions.Logging.Abstractions/5.0.0": {
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.51904"
+          }
+        }
+      },
+      "Novell.Directory.Ldap.NETStandard/3.6.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Logging.Abstractions": "5.0.0"
+        },
+        "runtime": {
+          "lib/net5.0/Novell.Directory.Ldap.NETStandard.dll": {
+            "assemblyVersion": "3.6.0.0",
+            "fileVersion": "3.6.0.0"
+          }
+        }
+      },
+      "System.DirectoryServices/8.0.0": {
+        "runtime": {
+          "lib/net8.0/System.DirectoryServices.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.23.53103"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net8.0/System.DirectoryServices.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.23.53103"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "jonatan-openconsult/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.Extensions.Logging.Abstractions/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-NxP6ahFcBnnSfwNBi2KH2Oz8Xl5Sm2krjId/jRR3I7teFphwiUoUeZPwTNA21EX+5PtjqmyAvKaOeBXcJjcH/w==",
+      "path": "microsoft.extensions.logging.abstractions/5.0.0",
+      "hashPath": "microsoft.extensions.logging.abstractions.5.0.0.nupkg.sha512"
+    },
+    "Novell.Directory.Ldap.NETStandard/3.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-5vNTd3iABmOi31teMcy/B32awmcrc3zW6GUu45PcH42OeJbXjTaSKEVCRbnBMnxB5BQ27YZ/05kSHVYXf+tBsw==",
+      "path": "novell.directory.ldap.netstandard/3.6.0",
+      "hashPath": "novell.directory.ldap.netstandard.3.6.0.nupkg.sha512"
+    },
+    "System.DirectoryServices/8.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-7nit//efUTy1OsAKco2f02PMrwsR2S234N0dVVp84udC77YcvpOQDz5znAWMtgMWBzY1aRJvUW61jo/7vQRfXg==",
+      "path": "system.directoryservices/8.0.0",
+      "hashPath": "system.directoryservices.8.0.0.nupkg.sha512"
+    }
+  }
+}

@@ -1,0 +1,58 @@
+using System;
+using System.Linq;
+using System.Xml.Linq;
+using Novell.Directory.Ldap;
+
+class teste
+{
+    static void main()
+    {
+        string ldapHost = "localhost";
+        int ldapPort = 389;
+        string adminUser = "cn=admin,dc=jonatanopenconsult,dc=com";  // Use o DN completo do admin
+        string adminPassword = "852852";  // Use a senha correta
+        //substituir por um foreach lendo todos os arquivos que comecem com AddGrupo
+        string filePath = "Desafio/AddGrupo1.xml";
+        if (!System.IO.File.Exists(filePath))
+        {
+            throw new Exception($"Arquivo {filePath} não encontrado.");
+        }
+
+        XDocument doc = XDocument.Load(filePath);
+
+        var identificador = doc.Descendants("add-attr")
+                               .Where(x => (string)x.Attribute("attr-name") == "Identificador")
+                               .Select(x => (string)x.Element("value"))
+                               .FirstOrDefault();
+
+        var descricao = doc.Descendants("add-attr")
+                           .Where(x => (string)x.Attribute("attr-name") == "Descricao")
+                           .Select(x => (string)x.Element("value"))
+                           .FirstOrDefault();
+
+        // Validação simples
+        //if (string.IsNullOrEmpty(identificador) || !System.Text.RegularExpressions.Regex.IsMatch(identificador, @"^[a-zA-Z0-9]+$"))
+        //{
+        //    throw new Exception("Identificador inválido. Deve conter apenas letras e números.");
+        //}
+
+        using (var connection = new LdapConnection { SecureSocketLayer = false })
+        {
+            connection.Connect(ldapHost, ldapPort);
+            connection.Bind(adminUser, adminPassword);
+
+            // Adicionar o grupo
+            string dn = $"cn={identificador},ou=Groups,dc=jonatanopenconsult,dc=com";  // Certifique-se de que "Groups" existe
+            var attributes = new LdapAttributeSet
+            {
+                new LdapAttribute("objectClass", "groupOfNames"),
+                new LdapAttribute("cn", identificador),
+                new LdapAttribute("description", descricao)
+            };
+
+            connection.Add(new LdapEntry(dn, attributes));
+
+            Console.WriteLine($"Grupo {identificador} adicionado com sucesso!");
+        }
+    }
+}

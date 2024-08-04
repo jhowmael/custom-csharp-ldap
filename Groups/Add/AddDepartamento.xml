@@ -1,0 +1,11 @@
+<add class-name="Grupo">
+  <add-attr attr-name="Identificador">
+    <value type="string">Departamento </value>
+  </add-attr>
+  <add-attr attr-name="Descricao">
+    <value type="string">Departamento de TI</value>
+  </add-attr>
+  <add-attr attr-name="Membros">
+    <value type="string">cn=Usuario1,ou=Users,dc=jonatanopenconsult,dc=com</value>
+  </add-attr>
+</add>
